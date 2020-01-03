@@ -1,0 +1,7 @@
+{
+  "name": "nodejs-mvc",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Jacky Le Nghia",
+  "license": "MIT"
+}
