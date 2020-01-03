@@ -10,7 +10,7 @@ logs
 **/*.back.*
 
 node_modules
-bower_components
+bower_componets
 
 *.sublime*
 
@@ -28,5 +28,9 @@ sketch
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
 .history
+
+
+### webpack dist ###
+dist
 
 # End of https://www.gitignore.io/api/react,visualstudiocode
