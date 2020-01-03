@@ -1,11 +1,12 @@
-import './anotherjavascript';
-import './mystyle.css';
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
+import App from './views/App';
 
-console.log('here');
+// ReactDOM.render(
+//   <Body />,
+//   document.getElementById("container")
+// );
 
-function myFunction() {
-  var displayTime = "Current time: " + Date();
-  document.getElementById("myindex").innerHTML = displayTime;
-}
-
-window.myFunction = myFunction;
+ReactDOM.render(
+  <App />, document.getElementById("container")
+);
