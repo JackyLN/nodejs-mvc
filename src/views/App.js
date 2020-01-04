@@ -1,33 +1,29 @@
 import React, { Component } from 'react';
-import { Form, Button, Container } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { HashRouter, Route, Switch } from 'react-router-dom';
+
+
+const loading = () => <div className="animated fadeIn pt-3 text-center">Loading...</div>;
+
+// Pages
+const Login = React.lazy(() => import('./Login'));
+const Register = React.lazy(() => import('./Register'));
+const Home = React.lazy(() => import('./Home'));
+
+
 
 class App extends Component {
 
   render() {
     return (
-      <Container>
-        <Form>
-          <Form.Group controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" />
-            <Form.Text className="text-muted">
-              We'll never share your email with anyone else.
-            </Form.Text>
-          </Form.Group>
-
-          <Form.Group controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Password" />
-          </Form.Group>
-          <Form.Group controlId="formBasicCheckbox">
-            <Form.Check type="checkbox" label="Check me out" />
-          </Form.Group>
-          <Button variant="primary" type="submit">
-            Submit
-          </Button>
-        </Form>
-      </Container>
+      <HashRouter>
+          <React.Suspense fallback={loading()}>
+            <Switch>
+              <Route exact path="/login" name="Login Page" render={props => <Login {...props}/>} />
+              <Route exact path="/register" name="Register Page" render={props => <Register {...props}/>} />
+              <Route path="/" name="Home" render={props => <Home {...props}/>} />
+            </Switch>
+          </React.Suspense>
+      </HashRouter>
     );
   }
 }
