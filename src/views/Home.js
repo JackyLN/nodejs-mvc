@@ -60,8 +60,10 @@ class Home extends Component {
   render() {
     let that = this;
     const { isUsed } = this.state;
-
-    const userTable = (
+    
+    const userTable = isUsed ?
+    (<Table></Table>) :
+    (
       <Table striped bordered hover size="sm" responsive>
         <thead>
           <tr>
